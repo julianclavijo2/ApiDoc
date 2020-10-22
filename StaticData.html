@@ -1,0 +1,649 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShekinApi - Documentation</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="scribbler-global.css">
+    <link rel="stylesheet" href="scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div class="doc__bg"></div>
+    <!--  <img src="images/loco2.png" class="logo"> -->
+    <nav class="header">
+        <div>
+            <a href="index.html"><img src="images/loco2.png" class="logo2"></a>
+        </div>
+        <h1 class="logo">Shekinapi <span class="logo__thin">Docs</span></h1>
+
+        <ul class="menu">
+            <div class="menu__item toggle"><span></span></div>
+
+            <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <aside class="doc__nav">
+            <ul>
+                <li class="js-btn "><a href="Authentication.html">Authentication</a></li>
+                <li class="js-btn "><a href="Services.html">Services</a></li>
+                <li class="js-btn selected "><a href="StaticData.html">Static Data</a></li>
+                <li class="js-btn  "><a href="OtherServices.html">Other Services</a></li>
+                <li class="js-btn "><a href="Appendix.html">Appendix</a></li>
+                <li class="js-btn "><a href="errors.html">Errors</a></li>
+                <li class="js-btn "><a href="versions.html">Versions</a></li>
+            </ul>
+        </aside>
+        <!-- ------------------------------------------------------------- -->
+
+        <div class="wrapper">
+            <div class="tabs">
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+                    <label for="tab-1" class="tab-label">Intro</label>
+                    <div class="tab-content">
+
+                        <h1>Static Data</h1>
+                        <p>
+                            All static data, especially hotel information must be stored in the local server and should be updated at least once a month. To get all static data from our hotels and cities inventory, you must consume the rest services with the URL found on each section,
+                            resulting a JSON format with the hotels and cities information. In our services, a parameter with the amount of records wanted must be sent. These records are limited to 1000 and a parameter with page number, in order to keep
+                            track of the information that is already downloaded. To download the static data, we recommend to download first all cities content and then all hotels content. When sending asynchronous request, it is recommended to wait until
+                            a response for your first request is received before sending the second request. We also will inform about important changes in the static data by email and it is advised to update that specific item immediately.
+                        </p>
+
+
+
+                    </div>
+                </div>
+
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+                    <label for="tab-2" class="tab-label">Get cities</label>
+                    <div class="tab-content">
+
+                        <h2>Get Cities</h2>
+                        <p>
+                            Service to execute data static to cities.
+                        </p>
+                        <h2>HTTP Request</h2>
+                        <p>
+                            POST http://apidev.shekinapi.com:8001/cities
+                        </p>
+
+                        <h2>URL Parameters</h2>
+                        <p>
+                            The following should be sent in the raw of the URL
+                        </p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>User</td>
+                                    <td>User authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>Password</td>
+                                    <td>Password authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>Token</td>
+                                    <td>Token authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>Cant</td>
+                                    <td>Amount of records that will be consumed per page</td>
+                                </tr>
+                                <tr>
+                                    <td>Pag</td>
+                                    <td>Number of page</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Response Parameters</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Total quantity</td>
+                                    <td>Quantity of registers that you must download</td>
+                                </tr>
+                                <tr>
+                                    <td>pages</td>
+                                    <td>Quantity of pages that you must consult</td>
+                                </tr>
+                                <tr>
+                                    <td>result</td>
+                                    <td>Response information in JSON format</td>
+                                </tr>
+                                <tr>
+                                    <td>cod_country</td>
+                                    <td>Country code</td>
+                                </tr>
+                                <tr>
+                                    <td>code</td>
+                                    <td>City code</td>
+                                </tr>
+                                <tr>
+                                    <td>country</td>
+                                    <td>Country name</td>
+                                </tr>
+                                <tr>
+                                    <td>name</td>
+                                    <td>City name</td>
+                                </tr>
+                                <tr>
+                                    <td>state</td>
+                                    <td>State name</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <button class="button example_button" style="vertical-align:middle"><span>Example</span></button>
+                        <div class="code__block code__block--notabs example_div " style="display: none;">
+                            <pre class="code code--block">
+                                                                 <code>
+                                                                     <p style="color:#d85e5e">The Request when sending in body (form-data) key="data" and value = JSON with the following structure:</p>
+
+                                                                    {
+                                                                        "user" : "user",
+                                                                        "pass" : "6e9552c9bd8e61c8f277c21220160234",
+                                                                        "token" : "c270d866f86d10a235dbd634e1c7bc56",
+                                                                        "cant" : "20",
+                                                                        "pag" : "1"
+                                                                        } 
+                                        <p  style="color:#d85e5e">The answer shows a JSON code with the following structure:</p>
+
+                                        {
+                                            "Total quantity": 7012, 
+                                            "pages": 71, 
+                                            "result": 
+                                            [{
+                                            "cod_country": "US", 
+                                            "code": "ChIJY3peyGWTYIcRUz40Fzn8zmk", 
+                                            "country": "United States", 
+                                            "name": "Casper", 
+                                            "state": "Wyoming"
+                                            }]
+                                        } 
+
+
+                                                                 </code>
+                             </pre>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+                    <label for="tab-3" class="tab-label">Get Hotels</label>
+                    <div class="tab-content">
+
+                        <h2>Get Hotels</h2>
+                        <p>
+                            Service to consume data static to hotel.
+                        </p>
+                        <h2>HTTP Request</h2>
+                        <p>
+                            POST http://apidev.shekinapi.com:8001/hotels
+                        </p>
+
+                        <h2>URL Parameters</h2>
+                        <p>
+                            The following should be sent in the raw of the URL
+                        </p>
+                        <h2>Request Parameters</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>User</td>
+                                    <td>User authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>Password</td>
+                                    <td>Password authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>Token</td>
+                                    <td>Token authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>Cant</td>
+                                    <td>Amount of records that will be consumed per page</td>
+                                </tr>
+                                <tr>
+                                    <td>Pag</td>
+                                    <td>Number of page</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Response Parameters</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Total quantity</td>
+                                    <td>Quantity of registers that you must download</td>
+                                </tr>
+                                <tr>
+                                    <td>pages</td>
+                                    <td>Quantity of pages that you must consult</td>
+                                </tr>
+                                <tr>
+                                    <td>result</td>
+                                    <td>Response information in JSON format</td>
+                                </tr>
+                                <tr>
+                                    <td>cityCode</td>
+                                    <td>City code</td>
+                                </tr>
+                                <tr>
+                                    <td>cityName</td>
+                                    <td>City name</td>
+                                </tr>
+                                <tr>
+                                    <td>hotelCode</td>
+                                    <td>Hotel code</td>
+                                </tr>
+                                <tr>
+                                    <td>hotelInfo</td>
+                                    <td>Hotel information</td>
+                                </tr>
+                                <tr>
+                                    <td>address</td>
+                                    <td>Hotel Address</td>
+                                </tr>
+                                <tr>
+                                    <td>amenities</td>
+                                    <td>Something, such as a swimming pool or shopping centre, that is intended to make life more pleasant or comfortable for the people in a property</td>
+                                </tr>
+                                <tr>
+                                    <td>description</td>
+                                    <td>Basic description of the hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>hotelName</td>
+                                    <td>Hotel Name</td>
+                                </tr>
+                                <tr>
+                                    <td>images</td>
+                                    <td>Images of the hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>latitude</td>
+                                    <td>Latitude where the hotel is spatially located</td>
+                                </tr>
+                                <tr>
+                                    <td>longitude</td>
+                                    <td>Longitude where the hotel is spatially located</td>
+                                </tr>
+                                <tr>
+                                    <td>stars</td>
+                                    <td>Number of the category of the hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>propertyCategory</td>
+                                    <td>A property category represents the type of accommodation being offered, "to see the list of Types, check the Appendix Property Category"</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="button example_button" style="vertical-align:middle"><span>Example</span></button>
+                        <div class="code__block code__block--notabs example_div " style="display: none;">
+                            <pre class="code code--block">
+                                                                 <code>
+                                                                       <p style="color:#d85e5e"> The Request when sending in body (form-data) key="data" and value = JSON with the following structure:</p>
+
+                                                                        {
+                                                                        "user" : "user",
+                                                                        "pass" : "6e9552c9bd8e61c8f277c21220160234",
+                                                                        "token" : "c270d866f86d10a235dbd634e1c7bc56",
+                                                                        "cant" : "20",
+                                                                        "pag" : "1"
+                                                                        } 
+                                                                       <p style="color:#d85e5e"> The answer shows a JSON code with the following structure:</p>
+                                                                        
+                                                                        {
+                                                                          "Total quantity": 7012, 
+                                                                          "pages": 71, 
+                                                                          "result": 
+                                                                          [{
+                                                                            "cityCode": "ChIJud3-Kxem2YgR62OUJUEXvjc", 
+                                                                            "cityName": "Miami Beach", 
+                                                                            "hotelCode": "10261796", 
+                                                                            "hotelInfo": {
+                                                                                            "address": "Mossèn Jaume Soler, 44. . 43820. Calafell, España",
+                                                                                            "amenities": [
+                                                                                                {
+                                                                                                    "code": "Aparcamiento sin asistencia (de pago)"
+                                                                                                },
+                                                                                                {
+                                                                                                    "code": "Ascensor"
+                                                                                                }
+                                                                                            ],
+                                                                                            "description": {
+                                                                                                "en": "lt;pgt;lt;bgt;Property Locationlt;/bgt; lt;br /gt;With a stay at Silken Canadá Palace in Calafell, youapos;ll be near the beach and minutes from Ciutadella Iberica, and close to Calafell Slide.  This 4-star hotel is within close proximity of Santa Creu Castle and Pau Casals Museum.lt;/pgt;lt;pgt;lt;bgt;Roomslt;",
+                                                                                                "es": "lt;pgt;lt;bgt;Ubicación del establecimientolt;/bgt; lt;br /gt;En Silken Canadá Palace gozarás de una buena ubicación en Calafell, cerca de la playa, a pocos minutos de Yacimiento arqueológico Ciutadella Ibèrica y en las inmediaciones de Calafell Slide.  Este hotel de 4 estrellas se encuentra muy cerca de Castillo de la Santa Creu y Museo Pau Casals.lt;/pgt;lt;pgt;lt;bgt;Habitacioneslt;;",
+                                                                                                "pt": "lt;pgt;lt;bgt;Localização do Estabelecimentolt;/bgt; lt;br /gt;Localizado em Calafell, Silken Canadá Palace o está situado perto da praia, e a uma curta distância de vários lugares carismáticos, incluindo Ciutadella Ibèrica e Calafell Slide.  Este hotel de 4 estrelas fica ainda nas imediações de outros pontos de interesse, entre os quais Castelo de Santa Creu e Museo Pau Casals.lt;/pgt;lt;pgt;lt;bgt;Quartoslt;"
+                                                                                            },
+                                                                                            "hotelName": "Silken Canada Palace",
+                                                                                            "images": [
+                                                                                                "http://www.shekinapi.com/include/hndlImageRequest/ImageRequest.ashx?w=360&h=270&coded=1&path=68747470733a2f2f692e74726176656c6170692e636f6d2f686f74656c732f323030303030302f313434303030302f313433313130302f313433313031352f31393864373230375f622e6a7067",
+                                                                                                "http://www.shekinapi.com/include/hndlImageRequest/ImageRequest.ashx?w=360&h=270&coded=1&path=68747470733a2f2f692e74726176656c6170692e636f6d2f686f74656c732f323030303030302f313434303030302f313433313130302f313433313031352f38633662343735655f622e6a7067",
+                                                                                                "http://www.shekinapi.com/include/hndlImageRequest/ImageRequest.ashx?w=360&h=270&coded=1&path=68747470733a2f2f692e74726176656c6170692e636f6d2f686f74656c732f323030303030302f313434303030302f313433313130302f313433313031352f62626639616539375f622e6a7067",
+                                                                                                "http://www.shekinapi.com/include/hndlImageRequest/ImageRequest.ashx?w=360&h=270&coded=1&path=68747470733a2f2f692e74726176656c6170692e636f6d2f686f74656c732f323030303030302f313434303030302f313433313130302f313433313031352f34393333636664615f622e6a7067"
+                                                                                            ],
+                                                                                            "latitude": "41.1892982",
+                                                                                            "longitude": "1.5765167",
+                                                                                            "stars": "4"
+                                                                                        }
+                                                                             }]
+                                                                        }    
+
+                                                                 </code>
+                             </pre>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                <!-- ggggggggggggg -->
+
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+                    <label for="tab-4" class="tab-label">Get Hotel Detail</label>
+                    <div class="tab-content">
+
+                        <h2>Get Hotel Detail</h2>
+                        <p>
+                            Service to search data of a specific hotel .
+                        </p>
+                        <h2>HTTP Request</h2>
+                        <p>
+                            POST http://apidev.shekinapi.com:8001/hotelsdetails
+                        </p>
+
+                        <h2>URL Parameters</h2>
+                        <p>
+                            The following should be sent in the raw of the URL
+                        </p>
+                        <h2>Request Parameters</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>User</td>
+                                    <td>User authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>Pass</td>
+                                    <td>Password authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>Token</td>
+                                    <td>Token authenticated in the API</td>
+                                </tr>
+                                <tr>
+                                    <td>HotelCode</td>
+                                    <td>Code of hotel</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <h2>Response Parameters</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Parameter</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Total quantity</td>
+                                    <td> number of hotels</td>
+                                </tr>
+                                <tr>
+                                    <td>pages</td>
+                                    <td>page by hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>result</td>
+                                    <td>General information of hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>cityCode</td>
+                                    <td>City code</td>
+                                </tr>
+                                <tr>
+                                    <td>cityName</td>
+                                    <td>City Name </td>
+                                </tr>
+                                <tr>
+                                    <td>hotelCode</td>
+                                    <td>Code of hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>hotelInfo</td>
+                                    <td>General items of hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>address</td>
+                                    <td>Address name's hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>amenities</td>
+                                    <td>Amenities of hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>description</td>
+                                    <td>Language hotel </td>
+                                </tr>
+                                <tr>
+                                    <td>email</td>
+                                    <td>Email's hotel </td>
+                                </tr>
+                                <tr>
+                                    <td>fax</td>
+                                    <td>Number of hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>hotelName</td>
+                                    <td>Name's hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>images</td>
+                                    <td>Images of hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>latitude</td>
+                                    <td> coordinates </td>
+                                </tr>
+
+                                <tr>
+                                    <td>longitude</td>
+                                    <td>coordinates</td>
+                                </tr>
+                                <tr>
+                                    <td>phones</td>
+                                    <td>Phone number of hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>stars</td>
+                                    <td>Star count</td>
+                                </tr>
+                                <tr>
+                                    <td>web</td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>zipCode</td>
+                                    <td>zipCode</td>
+                                </tr>
+                                <tr>
+                                    <td>propertyCategory</td>
+                                    <td>type of hotel (apartment, house, cabins)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button class="button example_button" style="vertical-align:middle"><span>Example</span></button>
+                        <div class="code__block code__block--notabs example_div " style="display: none;">
+                            <pre class="code code--block">
+                                                                 <code>
+                                                                       <p style="color:#d85e5e"> The Request when sending in body (form-data) key="data" and value = JSON with the following structure:</p>
+
+                                                                        {
+                                                                            "user":"user",
+                                                                            "pass":"29550c8d90eea1ee890b5a37f9b37635",
+                                                                            "token":"e3ccfe530ac9a280d58b0c73d1d191b0",
+                                                                            "hotelCode" : "via_4543837"
+                                                                        } 
+                                                                       <p style="color:#d85e5e"> The answer shows a JSON code with the following structure:</p>
+                                                                        
+                                                                       {
+                                                                        "Total quantity": 1,
+                                                                        "pages": 1,
+                                                                        "result": [
+                                                                            {
+                                                                                "cityCode": "584438",
+                                                                                "cityName": "Doonan",
+                                                                                "hotelCode": "via_4543837",
+                                                                                "hotelInfo": {
+                                                                                    "address": "2 Livistona Drive",
+                                                                                    "amenities": [
+                                                                                        "Picnic area",
+                                                                                        "Coffee",
+                                                                                        "Breakfast",
+                                                                                        "Health Spa",
+                                                                                        "Pool bar",
+                                                                                        "Restaurant(s)",
+                                                                                        "Meeting room",
+                                                                                        "Free car parking",
+                                                                                        "Free Wifi",
+                                                                                        "Outdoor pool",
+                                                                                        "Free Internet access (Lounge)",
+                                                                                        "Reception area",
+                                                                                        "Terrace",
+                                                                                        "Luggage storage",
+                                                                                        "Smoking area",
+                                                                                        "Laundry Service",
+                                                                                        "Wheelchair accessible",
+                                                                                        "TV",
+                                                                                        "Bathroom",
+                                                                                        "Total number of rooms 1 - 50",
+                                                                                        "Arcade",
+                                                                                        "Surcharge",
+                                                                                        "Garden"
+                                                                                    ],
+                                                                                    "description": {
+                                                                                        "en": "",
+                                                                                        "es": "",
+                                                                                        "pt": ""
+                                                                                    },
+                                                                                    "email": "info@mbs-wellness.com",
+                                                                                    "fax": "+61754491716",
+                                                                                    "hotelName": "Noosa Edge Nudist Retreat Noosa Edge Paradise",
+                                                                                    "images": [
+                                                                                        "https://az712897.vo.msecnd.net/images/full/97904a3c-be31-40b2-ac51-7c1e512b4093.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/9ef6b6ff-b833-489b-a00b-358dc018ccdb.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/b8bd6e92-45c2-4788-af02-81b78764c5e8.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/1a63e7a9-3cef-45e3-b843-07d59d827cc9.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/618a88da-8555-4e54-a96c-ff49c42fa2ab.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/d069c6a6-7ad1-41ae-b275-0020f1a7d7f9.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/1a2646c6-7d6b-48a5-836a-e8691068c064.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/743adc8e-c223-4db5-9a68-c9a57f41d46f.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/0be333e9-62ba-4e64-9d80-a880d16bb5fc.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/e9c87259-013e-4a2b-a7b2-03e2f0ced9fb.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/ddb6df62-9121-4afb-89db-2fc1342baa5a.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/8037a67c-a3fe-4ceb-983f-75a5dca976b9.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/df704337-7c85-44d2-959f-2605d2b33035.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/120b6d77-3484-475b-a10c-d052a486ad5d.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/11932812-81ed-42cf-91a0-9aa50025e03f.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/ff018960-c1e1-4b7b-93df-1cee9951e29e.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/5628e802-0e40-419a-a07e-baa179934375.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/4f088be0-bf22-4904-92d7-105c989564c4.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/31c1f56a-f150-4284-83a0-a6ce4d34034d.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/a39b19d7-b95d-4c9f-a08d-5d7c09bf5982.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/40325e8d-7ffa-448b-bbe0-ee7232bb3557.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/6524e9bf-3bdb-4154-bc07-326968586cc5.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/f0fd9146-2f2c-435f-a12f-346c5ed1f463.jpeg",
+                                                                                        "https://az712897.vo.msecnd.net/images/full/f51922ed-ba96-4d71-9f10-3b0aa7aaab1a.jpeg"
+                                                                                    ],
+                                                                                    "latitude": -26.430144,
+                                                                                    "longitude": 153.015484,
+                                                                                    "phones": "61-414410114",
+                                                                                    "stars": "4",
+                                                                                    "web": "http://mbs-wellness.com/",
+                                                                                    "zipCode": "4562"
+                                                                                },
+                                                                                "propertyCategory": "Apartment"
+                                                                            }
+                                                                        ]
+                                                                    }
+                                                                 </code>
+                             </pre>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="scribbler.js"></script>
+</body>
+
+</html>
+
+<script>
+    $(document).ready(function() {
+        $('.example_button').click(function() {
+            $('.example_div').fadeIn();
+        })
+
+    });
+</script>

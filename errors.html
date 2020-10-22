@@ -1,0 +1,121 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShekinApi - Documentation</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="scribbler-global.css">
+    <link rel="stylesheet" href="scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div class="doc__bg"></div>
+    <!--  <img src="images/loco2.png" class="logo"> -->
+    <nav class="header">
+        <div>
+            <a href="index.html"><img src="images/loco2.png" class="logo2"></a>
+        </div>
+        <h1 class="logo">Shekinapi <span class="logo__thin">Docs</span></h1>
+
+        <ul class="menu">
+            <div class="menu__item toggle"><span></span></div>
+
+            <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <aside class="doc__nav">
+            <ul>
+                <li class="js-btn "><a href="Authentication.html">Authentication</a></li>
+                <li class="js-btn "><a href="Services.html">Services</a></li>
+                <li class="js-btn  "><a href="StaticData.html">Static Data</a></li>
+                <li class="js-btn  "><a href="OtherServices.html">Other Services</a></li>
+                <li class="js-btn "><a href="Appendix.html">Appendix</a></li>
+                <li class="js-btn selected"><a href="errors.html">Errors</a></li>
+                <li class="js-btn "><a href="versions.html">Versions</a></li>
+            </ul>
+        </aside>
+        <!-- ------------------------------------------------------------- -->
+
+        <div class="wrapper">
+            <div class="tabs">
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+                    <label for="tab-1" class="tab-label">Errors</label>
+                    <div class="tab-content">
+
+                        <h2>Errors</h2>
+                        <p> This section shows the errors that may appear in the services in order to identify the wrong operation. This API use the following error code:</p>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Error Code</th>
+                                    <th>Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>100</td>
+                                    <td>Access Denied -- The information of the authentication is not valid</td>
+                                </tr>
+                                <tr>
+                                    <td>200</td>
+                                    <td>The service "Cancellation Policies" was not executed</td>
+                                </tr>
+                                <tr>
+                                    <td>201</td>
+                                    <td>The service "Enhanced" was not executed</td>
+                                </tr>
+                                <tr>
+                                    <td>300</td>
+                                    <td>An error has ocurred</td>
+                                </tr>
+                                <tr>
+                                    <td>301</td>
+                                    <td>Availability not Found</td>
+                                </tr>
+                                <tr>
+                                    <td>600</td>
+                                    <td>Booking code was not created</td>
+                                </tr>
+                                <tr>
+                                    <td>700</td>
+                                    <td>It was not possible to load the information in session to generate the order</td>
+                                </tr>
+                                <tr>
+                                    <td>800</td>
+                                    <td>There was a mistake creating the order</td>
+                                </tr>
+                                <tr>
+                                    <td>900</td>
+                                    <td>Service not available, contact the administrator</td>
+                                </tr>
+                                <tr>
+                                    <td>1000</td>
+                                    <td>The maximum amount of records are 1000</td>
+                                </tr>
+                                <tr>
+                                    <td>1001</td>
+                                    <td>The quantity must be greater than 0</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,406 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ShekinApi - Documentation</title>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="scribbler-global.css">
+    <link rel="stylesheet" href="scribbler-doc.css">
+    <link rel="author" href="humans.txt">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+    <div class="doc__bg"></div>
+    <!--  <img src="images/loco2.png" class="logo"> -->
+    <nav class="header">
+        <div>
+            <a href="index.html"><img src="images/loco2.png" class="logo2"></a>
+        </div>
+        <h1 class="logo">Shekinapi <span class="logo__thin">Docs</span></h1>
+
+        <ul class="menu">
+            <div class="menu__item toggle"><span></span></div>
+
+            <li class="menu__item"><a href="index.html" class="link link--dark"><i class="fa fa-home"></i> Home</a></li>
+        </ul>
+    </nav>
+    <div class="wrapper">
+        <aside class="doc__nav">
+            <ul>
+                <li class="js-btn "><a href="Authentication.html">Authentication</a></li>
+                <li class="js-btn "><a href="Services.html">Services</a></li>
+                <li class="js-btn  "><a href="StaticData.html">Static Data</a></li>
+                <li class="js-btn  "><a href="OtherServices.html">Other Services</a></li>
+                <li class="js-btn selected"><a href="Appendix.html">Appendix</a></li>
+                <li class="js-btn "><a href="errors.html">Errors</a></li>
+                <li class="js-btn "><a href="versions.html">Versions</a></li>
+            </ul>
+        </aside>
+        <!-- ------------------------------------------------------------- -->
+
+        <div class="wrapper">
+            <div class="tabs">
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-1" checked class="tab-switch">
+                    <label for="tab-1" class="tab-label">Meal Plan Code</label>
+                    <div class="tab-content">
+                        <h2>Mel Plan Code</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>MEAL-NO-DR</td>
+                                    <td>Room only</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-BE-DR</td>
+                                    <td>Breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-BA-DR </td>
+                                    <td> American breakfast </td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-LU-DR </td>
+                                    <td>Lunch</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-DD-DR</td>
+                                    <td>Dinner</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-BR-DR</td>
+                                    <td>BRUNCH</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-DI-DR</td>
+                                    <td>Drinks Inclusive</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-BC-DR</td>
+                                    <td>Continental breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-IB-DR</td>
+                                    <td>Irish breakfast</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-BT-DR</td>
+                                    <td>Breakfast a la carte</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-BB-DR</td>
+                                    <td>Buffet breakfast</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td>MEAL-HB-DR</td>
+                                    <td>Half board</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-BL-DR</td>
+                                    <td>Breakfast And Lunch</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-BD-DR</td>
+                                    <td>Breakfast And Dinner</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-DL-DR</td>
+                                    <td>Dinner And Lunch</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-FB-DR</td>
+                                    <td>Full board</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-CD-DR</td>
+                                    <td>3 Dishes</td>
+                                </tr>
+                                <tr>
+                                    <td> MEAL-AI-DR</td>
+                                    <td>All inclusive</td>
+                                </tr>
+                                <tr>
+                                    <td>MEAL-EB-DR</td>
+                                    <td>EXTERNAL BOARD TYPE </td>
+                                </tr>
+
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-2" class="tab-switch">
+                    <label for="tab-2" class="tab-label">Status Booking</label>
+                    <div class="tab-content">
+                        <h2>Status Booking</h2>
+
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>CON (Pending payment)</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>CAN (Canceled by error)</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Ok (confirmed) - Pre-pay client</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>CAC (Canceled by client)</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Pre pay</td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td>OK (confirmed) - credit client</td>
+                                </tr>
+                                <tr>
+                                    <td>7</td>
+                                    <td>ERRC (Error to cancel Booking)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-3" class="tab-switch">
+                    <label for="tab-3" class="tab-label">Property Category</label>
+                    <div class="tab-content">
+                        <h2>Property Category</h2>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Apartment</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Hostel</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Hotel</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Other</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab">
+                    <input type="radio" name="css-tabs" id="tab-4" class="tab-switch">
+                    <label for="tab-4" class="tab-label">Currency Options</label>
+                    <div class="tab-content">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Code</th>
+                                    <th>Currency name</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AED</td>
+                                    <td>United Arab Emirates Dirham</td>
+                                </tr>
+                                <tr>
+                                    <td>ARS</td>
+                                    <td>Argentine Peso</td>
+                                </tr>
+                                <tr>
+                                    <td>AUD</td>
+                                    <td>Australian Dollar</td>
+                                </tr>
+                                <tr>
+                                    <td>BRL</td>
+                                    <td>Brazilian Real</td>
+                                </tr>
+                                <tr>
+                                    <td>CAD</td>
+                                    <td>Canadian Dollar</td>
+                                </tr>
+                                <tr>
+                                    <td>CHF</td>
+                                    <td>Swiss Franc</td>
+                                </tr>
+                                <tr>
+                                    <td>CNY</td>
+                                    <td>Chinese Yuan</td>
+                                </tr>
+                                <tr>
+                                    <td>COP</td>
+                                    <td>Colombian Peso</td>
+                                </tr>
+                                <tr>
+                                    <td>DKK</td>
+                                    <td>Danish Krone</td>
+                                </tr>
+                                <tr>
+                                    <td>EGP</td>
+                                    <td>Egyptian Pound</td>
+                                </tr>
+                                <tr>
+                                    <td>EUR</td>
+                                    <td>Euro</td>
+                                </tr>
+                                <tr>
+                                    <td>GBP</td>
+                                    <td>British Pound</td>
+                                </tr>
+                                <tr>
+                                    <td>HKD</td>
+                                    <td>Hong Kong Dollar</td>
+                                </tr>
+                                <tr>
+                                    <td>IDR</td>
+                                    <td>Indonesian Rupiah</td>
+                                </tr>
+                                <tr>
+                                    <td>ILS</td>
+                                    <td>Israeli New Shekel</td>
+                                </tr>
+                                <tr>
+                                    <td>INR</td>
+                                    <td>Indian Rupee</td>
+                                </tr>
+                                <tr>
+                                    <td>JPY</td>
+                                    <td>Japanese Yen</td>
+                                </tr>
+                                <tr>
+                                    <td>KRW</td>
+                                    <td>South Korean Won</td>
+                                </tr>
+                                <tr>
+                                    <td>LBP</td>
+                                    <td>Lebanese Pound</td>
+                                </tr>
+                                <tr>
+                                    <td>MAD</td>
+                                    <td>Moroccan Dirham</td>
+                                </tr>
+                                <tr>
+                                    <td>MXN</td>
+                                    <td>Mexican Peso</td>
+                                </tr>
+                                <tr>
+                                    <td>MYR</td>
+                                    <td>Malaysian Ringgit</td>
+                                </tr>
+                                <tr>
+                                    <td>NOK</td>
+                                    <td>Norwegian Krone</td>
+                                </tr>
+                                <tr>
+                                    <td>NZD</td>
+                                    <td>New Zealand Dollar</td>
+                                </tr>
+                                <tr>
+                                    <td>PHP</td>
+                                    <td>Philippine Peso</td>
+                                </tr>
+                                <tr>
+                                    <td>PLN</td>
+                                    <td>Polish Zloty</td>
+                                </tr>
+                                <tr>
+                                    <td>QAR</td>
+                                    <td>Qatari Rial</td>
+                                </tr>
+                                <tr>
+                                    <td>RUB</td>
+                                    <td>Russian Ruble</td>
+                                </tr>
+                                <tr>
+                                    <td>SAR</td>
+                                    <td>Saudi Riyal</td>
+                                </tr>
+                                <tr>
+                                    <td>SEK</td>
+                                    <td>Swedish Krona</td>
+                                </tr>
+                                <tr>
+                                    <td>SGD</td>
+                                    <td>Singapore Dollar</td>
+                                </tr>
+                                <tr>
+                                    <td>THB</td>
+                                    <td>Thai Baht</td>
+                                </tr>
+                                <tr>
+                                    <td>TRY</td>
+                                    <td>Turkish Lira</td>
+                                </tr>
+                                <tr>
+                                    <td>TWD</td>
+                                    <td>New Taiwan Dollar</td>
+                                </tr>
+                                <tr>
+                                    <td>USD</td>
+                                    <td>United States Dollar</td>
+                                </tr>
+                                <tr>
+                                    <td>VND</td>
+                                    <td>Vietnamese Dong</td>
+                                </tr>
+                                <tr>
+                                    <td>ZAR</td>
+                                    <td>South African Rand</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad();
+    </script>
+    <script src="scribbler.js"></script>
+</body>
+
+</html>
